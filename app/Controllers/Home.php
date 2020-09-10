@@ -4,7 +4,7 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('hello/world',['data'=>'Muhammad Rodhian Syabri']);
+		return view('hello/world',['data'=>'CEO Vedora Pekanbaru']);
 	}
 	//--------------------------------------------------------------------
 

@@ -11,9 +11,9 @@
             content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Jekyll v4.0.1">
         <title>Rodhian</title>
-        <script src="<?= base_url('jquery-3.5.1.js') ?>"></script>
+        <script src="<?= base_url('public/jquery-3.5.1.js') ?>"></script>
         <link
-            href="<?= base_url('bootstrap/css/bootstrap.min.css') ?>"
+            href="<?= base_url('public/bootstrap/css/bootstrap.min.css') ?>"
             rel="stylesheet">
 
         <style >
@@ -36,6 +36,6 @@
 
         </main>
         <!-- /.container -->
-        <script src="<?= base_url('bootstrap/js/bootstrap.min.js') ?>"></script>
+        <script src="<?= base_url('public/bootstrap/js/bootstrap.min.js') ?>"></script>
     </body>
 </html>

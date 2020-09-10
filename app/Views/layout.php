@@ -10,7 +10,19 @@
             name="author"
             content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Jekyll v4.0.1">
-        <title>Rodhian</title>
+        <script type='text/javascript'>
+            msg = "Selamat datang";
+            msg = msg + " " +"<?php echo session()->get('username')?>"+" -- "+" ";
+            pos = 0;
+            function scrollMSG() {
+                document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+                pos++;
+                if (pos > msg.length)
+                    pos = 0
+                window.setTimeout("scrollMSG()", 200);
+            }
+            scrollMSG();
+        </script>
         <script src="<?= base_url('public/jquery-3.5.1.js') ?>"></script>
         <link
             href="<?= base_url('public/bootstrap/css/bootstrap.min.css') ?>"

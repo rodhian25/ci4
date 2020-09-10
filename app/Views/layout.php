@@ -5,10 +5,12 @@
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
+        <meta
+            name="description" content="">
+        <meta name="keywords" content="Kukerta, KKN, Kuliah Kerja Nyata, Universitas Riau">
         <meta
             name="author"
-            content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+            content="rodhian">
         <meta name="generator" content="Jekyll v4.0.1">
         <script type='text/javascript'>
             msg = "Selamat datang";

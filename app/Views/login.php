@@ -22,13 +22,14 @@
     <div class="card col-9 col-md-4"><br/>
         <h3 class="text-center mb-4">Login</h3>
         <?php if($errors != null): ?>
-        <div class="alert alert-danger" role="alert">
-            <h5 class="alert-heading">Terjadi Kesalahan</h5>
+        <div class="alert alert-danger col-11 alert-dismissible ml-md-3 ml-3">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <h6 class="alert-heading">Terjadi Kesalahan</h6>
             <hr>
             <p class="mb-0">
                 <?php
 					foreach($errors as $err){
-						echo $err.'<br>';
+						echo $err.'<br/>';
 					}
 				?>
             </p>
@@ -44,10 +45,10 @@
             <?= form_password($password) ?>
         </div>
         <div class="text-center">
-		<a class="btn btn-light" href="<?= site_url('auth/register')?>">
-                        Register
-                    </a>
-            <?= form_submit('submit', 'Login',['class'=>'btn btn-primary']) ?><br/><br/>
+		    <a class="btn btn-light" href="<?= site_url('auth/register')?>">
+                Register
+            </a>
+            <?= form_submit('submit', 'Login',['class'=>'btn btn-success']) ?><br/><br/>
         </div>
     </div>
 </div>

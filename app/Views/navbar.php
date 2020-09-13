@@ -1,7 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-success fixed-top">
     <a class="navbar-brand" href="#">
-      <img src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="Rodhian Shop">
-      &nbsp;Rodhian Shop
+      Rodhian Shop
     </a>
     <button
         class="navbar-toggler"
@@ -17,9 +16,17 @@
         <?php if (session()->get('isLoggedIn')):?>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
+                    <a class="nav-link" href="<?= site_url('home/index') ?>">Home
                         <span class="sr-only">(current)</span>
                     </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-light dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Barang
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a href="<?= site_url('barang/index') ?>" class="dropdown-item">List Barang</a>
+                        <a href="<?= site_url('barang/create') ?>" class="dropdown-item">Tambah Barang</a>
+                    </div>
                 </li>
             </ul>
         <?php else : ?>
@@ -34,18 +41,13 @@
             <ul class="navbar-nav mr-auto">
                 <?php if (session()->get('isLoggedIn')):?>
                 <li class="nav-item">
-                    <a class="btn btn-dark" href="<?= site_url('auth/logout')?>">
-                        Logout
+                    <a class="nav-link text-light" href="<?= site_url('auth/logout')?>">
+                        Logout [&nbsp;<?php echo session()->get('username');?>&nbsp;]
                     </a>
                 </li>
                 <?php else : ?>
                 <li class="nav-item">
-                    <a class="btn btn-dark" href="<?= site_url('auth/login')?>">
-                        Login
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-dark" href="<?= site_url('auth/register')?>">
+                    <a class="nav-link text-light" href="<?= site_url('auth/register')?>">
                         Register
                     </a>
                 </li>

@@ -37,7 +37,7 @@ $gambar = [
 $submit = [
     'name'  =>  'submit',
     'id'    =>  'submit',
-    'value' =>  'Submit',
+    'value' =>  'Tambah',
     'class' =>  'btn btn-success',
     'type'  =>  'submit',
 ];
@@ -45,28 +45,54 @@ $submit = [
 <h3>Tambah Barang</h3>
 
 <?= form_open_multipart('Barang/create') ?>
-    <div class="form-group">
-        <?= form_label("Nama", "nama") ?>
-        <?= form_input($nama) ?>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <?= form_label("Gambar", "gambar") ?><br/>
+            <img
+                class="mb-3"
+                src="<?= base_url('uploads/default.png')?>"
+                id="gambar_preview"
+                width="200px"/>
+            <?= form_upload($gambar) ?>
+        </div>
     </div>
-
-    <div class="form-group">
-        <?= form_label("Harga", "harga") ?>
-        <?= form_input($harga) ?>
+    <div class="col-md-6">
+        <div class="form-group">
+            <?= form_label("Nama", "nama") ?>
+            <?= form_input($nama) ?>
+        </div>
+        <div class="form-group">
+            <?= form_label("Harga", "harga") ?>
+            <?= form_input($harga) ?>
+        </div>
+        <div class="form-group">
+            <?= form_label("Stok", "stok") ?>
+            <?= form_input($stok) ?>
+        </div>
+        <div class="text-right">
+            <?= form_submit($submit) ?>
+        </div>
     </div>
-
-    <div class="form-group">
-        <?= form_label("Stok", "stok") ?>
-        <?= form_input($stok) ?>
-    </div>
-
-    <div class="form-group">
-        <?= form_label("Gambar", "gambar") ?>
-        <?= form_upload($gambar) ?>
-    </div>
-
-    <div class="text-right">
-        <?= form_submit($submit) ?>
-    </div>
+</div>
 <?= form_close() ?>
+
+<!-- membuat preview gambar sebelum di upload-->
+<script>
+    function bacaGambar(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#gambar_preview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#gambar").change(function () {
+        bacaGambar(this);
+    });
+</script>
 <?= $this->endsection() ?>
